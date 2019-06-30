@@ -1,6 +1,7 @@
 // import { CoursesService } from './course/courses.service';
 import { Component } from '@angular/core'
 
+
 @Component({
     selector: 'courses',
     template: `
@@ -22,7 +23,8 @@ import { Component } from '@angular/core'
               </div>
               <br/>
               
-              <input #email (keyup.enter)="onKeyUp(email.value)" />
+             
+              <input [(ngModel)]="email"  (keyup.enter)="onKeyUp()" />
               
               ` 
 })
@@ -34,8 +36,9 @@ export class CoursesComponent {
     colSpan = 2;
     isActive = true
     
-    onKeyUp(email){
-        console.log(email)
+    email = "me@example.com"
+    onKeyUp(){
+        console.log(this.email)
     }
 
     onDivClicked() {
@@ -57,3 +60,5 @@ export class CoursesComponent {
     //   return this.title
     // }
 }
+
+// <input [value]="email"  (keyup.enter)="email = $event.target.value; onKeyUp()" />
