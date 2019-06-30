@@ -20,6 +20,9 @@ import { Component } from '@angular/core'
               <div (click)="onDivClicked()">
                 <button (click)="onSave($event)"  [style.backgroundColor]="isActive ? 'blue' : 'white'" class="btn btn-primary" [class.active]="isActive">Save</button>
               </div>
+              <br/>
+              
+              <input (keyup.enter)="onKeyUp($event)" />
               
               ` 
 })
@@ -31,6 +34,10 @@ export class CoursesComponent {
     colSpan = 2;
     isActive = true
     
+    onKeyUp(){
+        console.log("ENTER was pressed")
+    }
+
     onDivClicked() {
         console.log("div was clicked");
     }
