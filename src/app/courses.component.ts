@@ -13,6 +13,11 @@ import { Component } from '@angular/core'
                     <td [attr.colspan]="colSpan"></td>
                 </tr>
               </table>
+              <br/>
+
+              Here comes a button:
+              <br/>
+              <button class="btn btn-primary">Save</button>
               ` 
 })
 
