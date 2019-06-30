@@ -17,7 +17,10 @@ import { Component } from '@angular/core'
 
               Here comes a button:
               <br/>
-              <button [style.backgroundColor]="isActive ? 'blue' : 'white'" class="btn btn-primary" [class.active]="isActive">Save</button>
+              <div (click)="onDivClicked()">
+                <button (click)="onSave($event)"  [style.backgroundColor]="isActive ? 'blue' : 'white'" class="btn btn-primary" [class.active]="isActive">Save</button>
+              </div>
+              
               ` 
 })
 
@@ -27,7 +30,16 @@ export class CoursesComponent {
     imageUrl = "http://lorempixel.com/400/200";
     colSpan = 2;
     isActive = true
+    
+    onDivClicked() {
+        console.log("div was clicked");
+    }
 
+    onSave($event){
+        $event.stopPropagation()
+
+        console.log("button was clicked", $event);
+    } 
     // constructor(service: CoursesService){
     //     // let service = new CoursesService()
     //     this.courses = service.getCourses()
