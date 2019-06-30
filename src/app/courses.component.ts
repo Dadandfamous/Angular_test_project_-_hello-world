@@ -22,7 +22,7 @@ import { Component } from '@angular/core'
               </div>
               <br/>
               
-              <input (keyup.enter)="onKeyUp($event)" />
+              <input #email (keyup.enter)="onKeyUp(email.value)" />
               
               ` 
 })
@@ -34,8 +34,8 @@ export class CoursesComponent {
     colSpan = 2;
     isActive = true
     
-    onKeyUp(){
-        console.log("ENTER was pressed")
+    onKeyUp(email){
+        console.log(email)
     }
 
     onDivClicked() {
