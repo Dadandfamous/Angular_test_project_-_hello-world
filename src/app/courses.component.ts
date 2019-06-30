@@ -23,9 +23,14 @@ import { Component } from '@angular/core'
               </div>
               <br/>
               
-             
               <input [(ngModel)]="email"  (keyup.enter)="onKeyUp()" />
+              <br/>
               
+              {{ course.title | uppercase | lowercase }} <br/>
+              {{ course.students | number }} <br/>
+              {{ course.rating | number:'2.1-1' }} <br/>
+              {{ course.price | currency:'AUD':true:'3.2-2' }} <br/>
+              {{ course.releaseDate | date:'shortDate' }} <br/>
               ` 
 })
 
@@ -50,6 +55,14 @@ export class CoursesComponent {
 
         console.log("button was clicked", $event);
     } 
+
+    course = {
+        title: "The Complete Angular Course",
+        rating: 4.923,
+        students: 30123,
+        price: 190.95,
+        releaseDate: new Date(2016, 3, 1)
+    }
     // constructor(service: CoursesService){
     //     // let service = new CoursesService()
     //     this.courses = service.getCourses()
