@@ -17,7 +17,7 @@ import { Component } from '@angular/core'
 
               Here comes a button:
               <br/>
-              <button class="btn btn-primary" [class.active]="isActive">Save</button>
+              <button [style.backgroundColor]="isActive ? 'blue' : 'white'" class="btn btn-primary" [class.active]="isActive">Save</button>
               ` 
 })
 
@@ -26,7 +26,7 @@ export class CoursesComponent {
     title = "List of courses"
     imageUrl = "http://lorempixel.com/400/200";
     colSpan = 2;
-    isActive = false
+    isActive = true
 
     // constructor(service: CoursesService){
     //     // let service = new CoursesService()
